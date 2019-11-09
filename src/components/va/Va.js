@@ -22,7 +22,6 @@ class Va extends React.Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log("handle change", e.target.name, e.target.value);
   };
 
   addDays(date, days) {

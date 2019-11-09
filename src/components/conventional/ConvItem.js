@@ -3,12 +3,6 @@ import { Input, Form, Segment, Icon, Message, Table } from "semantic-ui-react";
 
 const ConvItem = props => {
   let bkgnd = "";
-  console.log(
-    props.value[props.name],
-    props.name,
-    props.value.closingDate,
-    props.days
-  );
   props.value[props.name] === "" || props.name === "closingDate"
     ? (bkgnd = "white")
     : props.compareDates(
@@ -53,8 +47,8 @@ const ConvItem = props => {
               <Icon name="long arrow alternate left" size="big" />
               Input a Date
             </Message>
-          ) : props.name === "voe" ? (
-            props.addBusinessDays(new Date(props.value[props.name]), props.days)
+          ) : props.name === "voe" || props.name === "voe2" ? (
+            props.addBusinessDays(props.value[props.name], props.days)
           ) : (
             props.addDays(props.value[props.name], props.days)
           )}
